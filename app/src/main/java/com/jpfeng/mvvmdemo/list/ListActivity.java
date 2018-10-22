@@ -1,14 +1,15 @@
 package com.jpfeng.mvvmdemo.list;
 
-import android.arch.lifecycle.ViewModelProviders;
-import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.jpfeng.mvvmdemo.R;
 import com.jpfeng.mvvmdemo.databinding.ActivityListBinding;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModelProviders;
 
 public class ListActivity extends AppCompatActivity {
 

@@ -1,9 +1,5 @@
 package com.jpfeng.mvvmdemo.list;
 
-import android.databinding.DataBindingUtil;
-import android.support.annotation.NonNull;
-import android.support.v7.util.DiffUtil;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -12,6 +8,11 @@ import com.jpfeng.mvvmdemo.R;
 import com.jpfeng.mvvmdemo.databinding.ItemListBinding;
 
 import java.util.List;
+
+import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.DiffUtil;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Author: Jpfeng
@@ -60,7 +61,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListHolder> {
                  * DiffUtil uses this method to check equality instead of {@link Object#equals(Object)}
                  * so that you can change its behavior depending on your UI.
                  * For example, if you are using DiffUtil with a
-                 * {@link android.support.v7.widget.RecyclerView.Adapter RecyclerView.Adapter}, you should
+                 * {@link RecyclerView.Adapter RecyclerView.Adapter}, you should
                  * return whether the items' visual representations are the same.
                  * <p>
                  * This method is called only if {@link #areItemsTheSame(int, int)} returns
