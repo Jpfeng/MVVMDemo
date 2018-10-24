@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View.OnClickListener;
 
+import com.jpfeng.mvvmdemo.custom.CustomViewActivity;
 import com.jpfeng.mvvmdemo.databinding.ActivityMainBinding;
 import com.jpfeng.mvvmdemo.list.ListActivity;
 
@@ -25,9 +26,14 @@ public class MainActivity extends AppCompatActivity {
         mModel.getText2().observe(this, s -> binding.setVariable(BR.mainText2, s));
         binding.setVariable(BR.mainClickListener, (OnClickListener) v -> mModel.addCount());
         binding.setVariable(BR.mainListClickListener, (OnClickListener) v -> toList());
+        binding.setVariable(BR.mainCustomViewClickListener, (OnClickListener) v -> toCustomView());
     }
 
     private void toList() {
         startActivity(new Intent(this, ListActivity.class));
+    }
+
+    private void toCustomView() {
+        startActivity(new Intent(this, CustomViewActivity.class));
     }
 }

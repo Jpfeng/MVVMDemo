@@ -1,11 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <data>
+
+        <import type="com.jpfeng.mvvmdemo.custom.Name" />
+
+        <variable
+            name="activityName"
+            type="Name" />
+
+        <variable
+            name="changeNameClickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context=".custom.CustomViewActivity">
 
-    </FrameLayout>
+        <com.jpfeng.mvvmdemo.custom.NameCustomView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:name="@{activityName}" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="@{changeNameClickListener}"
+            android:text="change" />
+    </LinearLayout>
 </layout>
