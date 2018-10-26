@@ -10,6 +10,8 @@ import com.jpfeng.mvvmdemo.R;
 import com.jpfeng.mvvmdemo.databinding.ViewNameBinding;
 
 import androidx.annotation.Nullable;
+import androidx.databinding.BindingMethod;
+import androidx.databinding.BindingMethods;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.Observable;
 import androidx.databinding.ObservableField;
@@ -19,6 +21,11 @@ import androidx.databinding.ObservableField;
  * E-mail: fengjp@mixotc.com
  * Date: 2018/10/22
  */
+@BindingMethods({
+        @BindingMethod(type = NameCustomView.class,
+                attribute = "name",
+                method = "showName")
+})
 public class NameCustomView extends LinearLayout {
 
     private ViewNameBinding mBinding;
@@ -42,7 +49,7 @@ public class NameCustomView extends LinearLayout {
         mName.addOnPropertyChangedCallback(new Observable.OnPropertyChangedCallback() {
             @Override
             public void onPropertyChanged(Observable sender, int propertyId) {
-                mBinding.setVariable(BR.view_name, mName.get());
+                mBinding.setVariable(BR.propertyName, mName.get());
             }
         });
     }

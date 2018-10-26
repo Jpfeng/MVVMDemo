@@ -21,7 +21,11 @@ public class CustomViewActivity extends AppCompatActivity {
         mModel = ViewModelProviders.of(this).get(CustomViewViewModel.class);
         ActivityCustomViewBinding binding
                 = DataBindingUtil.setContentView(this, R.layout.activity_custom_view);
-        mModel.getName().observe(this, name -> binding.setVariable(BR.activityName, name));
+        mModel.getName().observe(this, name -> {
+            binding.setVariable(BR.valueName, name);
+            binding.setVariable(BR.firstName, name.getFirstName());
+            binding.setVariable(BR.lastName, name.getLastName());
+        });
         binding.setVariable(BR.changeNameClickListener, (View.OnClickListener) v -> mModel.addCount());
     }
 }

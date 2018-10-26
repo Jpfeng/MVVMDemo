@@ -22,6 +22,8 @@ public class CustomViewViewModel extends ViewModel {
         mNames.add(new Name("Tyler", "Swift"));
         mNames.add(new Name("Jupeng", "feng"));
         mNames.add(new Name("Jack", "Ma"));
+        mNames.add(new Name("Jake", "Wharton"));
+        mNames.add(new Name("Tim", "Cook"));
         mName.addSource(mIndex, integer -> mName.setValue(mNames.get(integer % mNames.size())));
         mIndex.setValue(0);
     }

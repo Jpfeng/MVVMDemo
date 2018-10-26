@@ -6,7 +6,7 @@
         <import type="com.jpfeng.mvvmdemo.custom.Name" />
 
         <variable
-            name="view_name"
+            name="propertyName"
             type="Name" />
     </data>
 
@@ -29,7 +29,7 @@
                 android:layout_toEndOf="@id/tv_name_first"
                 android:background="@android:color/white"
                 android:gravity="center_horizontal"
-                android:text="@{view_name.firstName}" />
+                android:text="@{propertyName.firstName}" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -50,7 +50,7 @@
                 android:layout_toEndOf="@id/tv_name_last"
                 android:background="@android:color/white"
                 android:gravity="center_horizontal"
-                android:text="@{view_name.lastName}" />
+                android:text="@{propertyName.lastName}" />
         </RelativeLayout>
     </merge>
 </layout>

@@ -9,8 +9,8 @@ import androidx.databinding.BindingAdapter;
  */
 public class CustomViewBindingAdapter {
 
-    @BindingAdapter("name")
-    public static void showName(NameCustomView view, Name name) {
-        view.showName(name);
+    @BindingAdapter({"firstName", "lastName"})
+    public static void showName(NameCustomView view, String firstName, String lastName) {
+        view.showName(new Name(firstName, lastName));
     }
 }
